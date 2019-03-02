@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 
 public class Scene {
@@ -6,24 +6,24 @@ public class Scene {
     private String description;
     private ArrayList choices;
 
-    public Scene(ArrayList description, ArrayList choices){
-
+    public Scene(ArrayList descriptionArg, ArrayList choicesArg){
+        description = descriptionArg;
+        choices = choicesArg;
     }
 
     public ArrayList getChoices(){
-        return this.choices;
+        return choices;
     }
 
     public void setChoices(ArrayList newChoices){
-        this.choices = newChoices;
+        choices = newChoices;
     }
 
     public ArrayList getDescription(){
-        return this.description;
+        return description;
     }
 
     public void setDescription(ArrayList newDescription){
-        this.description = newDescription;
+        description = newDescription;
     }
-
 }
