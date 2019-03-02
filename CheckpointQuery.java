@@ -2,6 +2,11 @@ public class CheckpointQuery{
     private String checkpointName;
     private boolean wantedValue;
 
+    public CheckpointQuery(String cN, boolean wV){
+        checkpointName = cN;
+        wantedValue = wV;
+    }
+
     public String getCheckpointName(){
         return checkpointName;
     }
