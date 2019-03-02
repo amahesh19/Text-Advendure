@@ -3,14 +3,14 @@ import java.util.ArrayList;
 public class Choice{
     private String optionText;
     private String description;
-    private ArrayList flipCheckpoints;
+    private ArrayList<String> flipCheckpoints;
     private String scene;
 
-    public Choice(String oT, String d, ArrayList cR, ArrayList fC){
+    public Choice(String oT, String d, ArrayList<String> fC, String sc){
         optionText = oT;
         description = d;
-        checkpointsRequired = cR;
         flipCheckpoints = fC;
+        scene = sc;
     }
 
     public String getOptionText(){
@@ -29,11 +29,11 @@ public class Choice{
         description = newD;
     }
 
-    public ArrayList getFlipCheckpoints(){
+    public ArrayList<String> getFlipCheckpoints(){
         return flipCheckpoints;
     }
 
-    public void setFlipCheckpoints(ArrayList newFC){
+    public void setFlipCheckpoints(ArrayList<String> newFC){
         flipCheckpoints = newFC;
     }
 
