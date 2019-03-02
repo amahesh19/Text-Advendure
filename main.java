@@ -10,5 +10,6 @@ public class main {
 		Game newGame = new Game(Scenes, CheckPoints, currentScene); 
 		
 		newGame.start();
+		return;
 	}
 }
