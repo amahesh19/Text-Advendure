@@ -31,7 +31,7 @@ public class Text{
         return checkpointsRequired;
     }
 
-    public void setCheckpointsRequired(ArrayList<String> newCheckpointsRequired){
+    public void setCheckpointsRequired(ArrayList<CheckpointQuery> newCheckpointsRequired){
         checkpointsRequired = newCheckpointsRequired;
     }
 }

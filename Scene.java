@@ -17,6 +17,7 @@ public class Scene {
 
     public void setChoices(ArrayList newChoices){
         choices = newChoices;
+        return;
     }
 
     public Arraylist<Text> getDescription(){ //returns the actual description of the scene based on checkpoints completed.
@@ -25,5 +26,6 @@ public class Scene {
 
     public void setDescription(ArrayList<Text> Description){
         description = Description;
+        return;
     }
 }

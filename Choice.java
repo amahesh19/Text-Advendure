@@ -3,14 +3,16 @@ import java.util.ArrayList;
 public class Choice{
     private String optionText;
     private String description;
+    private ArrayList<CheckpointQuery> checkpoints;
     private ArrayList<String> flipCheckpoints;
     private String scene;
 
-    public Choice(String oT, String d, ArrayList<String> fC, String sc){
+    public Choice(String oT, String d, ArrayList<String> fC, String sc, ArrayList<CheckpointQuery> Checkpoints){
         optionText = oT;
         description = d;
         flipCheckpoints = fC;
         scene = sc;
+        checkpoints = Checkpoints;
     }
 
     public String getOptionText(){
@@ -43,5 +45,13 @@ public class Choice{
 
     public void setScene(String newScene){
         scene = newScene;
+    }
+
+    public ArrayList<CheckpointQuery> getCheckpoints(){
+        return checkpoints;
+    }
+
+    public void setCheckpoints(ArrayList<CheckpointQuery> Checkpoints){
+        checkpoints = Checkpoints;
     }
 }
