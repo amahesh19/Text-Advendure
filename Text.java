@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Text{
     private String trueText;
     private String falseText;
-    private ArrayList<String> checkpointsRequired;
+    private ArrayList<checkpointQuery> checkpointsRequired;
 
     public Text(String TrueText, String FalseText, ArrayList<String> CheckpointsRequired){
         trueText = TrueText;
@@ -27,12 +27,11 @@ public class Text{
         falseText = newFalseText;
     }
 
-    public ArrayList<String> getCheckpointsRequired(){
+    public ArrayList<CheckpointQuery> getCheckpointsRequired(){
         return checkpointsRequired;
     }
 
     public void setCheckpointsRequired(ArrayList<String> newCheckpointsRequired){
         checkpointsRequired = newCheckpointsRequired;
     }
-
 }
