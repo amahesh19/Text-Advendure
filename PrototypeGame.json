@@ -128,10 +128,10 @@
             "FalseText": "Get the key to unlock the metal door first.",
             "CheckpointsRequiredTrue": ["HasKey"]
         },
-        "S5t1": {
+        "S5T1": {
             "TrueText": "Congratulations! You won!",
             "FalseText": "",
-            "CheckpointsRequiredTrue": []
+            "CheckpointsRequiredTrue": ["UnlockedDoor"]
         }
     }
 }
