@@ -1,4 +1,5 @@
 {
+    "StartingScene": "S1",
     "Scenes": {
         "S1": {
             "Description": ["S1T1"],
