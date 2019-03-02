@@ -45,24 +45,3 @@ public class Choice{
         scene = newScene;
     }
 }
-
-public class CheckpointQuery{
-    private String checkpointName;
-    private Boolean wantedValue;
-
-    public String getCheckpointName(){
-        return checkpointName;
-    }
-
-    public void setCheckpointName(String newCheckpointName){
-        checkpointName = newCheckpointName;
-    }
-
-    public Boolean getWantedValue(){
-        return wantedValue;
-    }
-
-    public void setWantedValue(Boolean newWantedValue){
-        wantedValue = newWantedValue;
-    }
-}
