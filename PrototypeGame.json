@@ -16,6 +16,10 @@
         "S4": {
             "Description": ["S4T1", "S4T2"],
             "Choices": ["S4C1", "S4C2"]
+        },
+        "S5": {
+            "Description": ["S5T1"],
+            "Choices": []
         }
     },
     "Choices": {
@@ -123,4 +127,11 @@
             "TrueText": "You have unlocked the metal door.",
             "FalseText": "Get the key to unlock the metal door first.",
             "CheckpointsRequiredTrue": ["HasKey"]
+        },
+        "S5t1": {
+            "TrueText": "Congratulations! You won!",
+            "FalseText": "",
+            "CheckpointsRequiredTrue": []
+        }
+    }
 }
