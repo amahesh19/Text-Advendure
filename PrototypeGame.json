@@ -1,0 +1,64 @@
+{
+    "Scenes": {
+        "S1": {
+            "Description": ["S1T1"],
+            "Choices": ["S1C1", "S1C2"]
+        },
+        "S2": {
+            "Description": ["S2T1"],
+            "Choices": ["S2C1", "S2C2", "S2C3"]
+        }
+    },
+    "Choices": {
+        "S1C1": {
+            "OptionText": "Sit and rest",
+            "Description": "You sit and rest for a while.",
+            "CheckpointsRequired": [],
+            "FlipCheckpoints": [],
+            "Scene": "S1"
+        },
+        "S1C2": {
+            "OptionText": "Go North",
+            "Description": "You enter through the red door to the North.",
+            "CheckpointsRequired": [],
+            "FlipCheckpoints": [],
+            "Scene": "S2"
+        },
+        "S2C1": {
+            "OptionText": "Go West.",
+            "Description": "You enter the door to the West.",
+            "CheckpointsRequired": [],
+            "FlipCheckpoints": [],
+            "Scene": "S3"
+        },
+        "S2C2": {
+            "OptionText": "Go South.",
+            "Description": "You enter the door to the South.",
+            "CheckpointsRequired": [],
+            "FlipCheckpoints": [],
+            "Scene": "S1"
+        },
+        "S2C3": {
+            "OptionText": "Go East.",
+            "Description": "You enter the door to the East.",
+            "CheckpointsRequired": [],
+            "FlipCheckpoints": [],
+            "Scene": "S4"
+        }
+    },
+    "Checkpoints": {
+        "HasKey": false
+    },
+    "Text": {
+        "S1T1": {
+            "TrueText": "You find yourself in a dim room with a red door to your North.",
+            "FalseText": "",
+            "CheckpointsRequired": []
+        },
+        "S2T1": {
+            "TrueText": "You're in a room with red walls and a chandelier hanging in the middle. To your West is a massive steel door, to your South is a red door, to your East is a plastic door.",
+            "FalseText": "",
+            "CheckpointsRequired": []
+        }
+    }
+}
