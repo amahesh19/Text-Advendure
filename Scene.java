@@ -27,33 +27,3 @@ public class Scene {
         description = Description;
     }
 }
-
-public String getTextString(Text text, Map<String, Boolean> CheckpointDictionary){
-    ArrayList<CheckpointQuery> checkList = text.getCheckpointsRequired();
-    CheckpointQuery check;
-    boolean checkVal = True;
-    for (int current = 0, j < check.size(), j++){
-        check = checkList.get(j);
-        if (! (check.get(j).getWantedValue() == CheckpointDictionary.get(check.getCheckpointName()))){
-            checkVal = False;
-        }
-    }
-    if (checkVal){
-        return text.getTrueText();
-    }
-    else{
-        return text.getFalseText();
-    }
-}
-
-public String getSceneDescription(Scene scene){
-    String returnString = "";
-    Text text;
-    ArrayList<Text> description;
-    
-    for (int currentLine = 0, currentLine < description.size(), currentLine++){
-        text = description.get(currentLine);
-        returnString.concat("\n".concat(getTextString(text, getCheckPoints());
-    }
-    return returnString;
-}
