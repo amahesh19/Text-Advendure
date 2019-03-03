@@ -2,5 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/java-json.jar/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/json-simple-1.1.jar/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/org.apache.commons.io.jar/org.apache.commons.io.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -21,6 +21,7 @@ public class Choice{
 
     public void setOptionText(String newOption){
         optionText = newOption;
+        return;
     }
 
     public String getDescription(){
@@ -29,6 +30,7 @@ public class Choice{
 
     public void setDescription(String newD){
         description = newD;
+        return;
     }
 
     public ArrayList<String> getFlipCheckpoints(){
@@ -37,6 +39,7 @@ public class Choice{
 
     public void setFlipCheckpoints(ArrayList<String> newFC){
         flipCheckpoints = newFC;
+        return;
     }
 
     public String getScene(){
@@ -45,6 +48,7 @@ public class Choice{
 
     public void setScene(String newScene){
         scene = newScene;
+        return;
     }
 
     public ArrayList<CheckpointQuery> getCheckpoints(){
@@ -53,5 +57,6 @@ public class Choice{
 
     public void setCheckpoints(ArrayList<CheckpointQuery> Checkpoints){
         checkpoints = Checkpoints;
+        return;
     }
 }

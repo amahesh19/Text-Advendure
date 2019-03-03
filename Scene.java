@@ -20,7 +20,7 @@ public class Scene {
         return;
     }
 
-    public Arraylist<Text> getDescription(){ 
+    public ArrayList<Text> getDescription(){ 
         return description;
     }
 

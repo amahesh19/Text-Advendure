@@ -1,7 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
-import java.util.Exception;
 import java.util.Scanner;
 
 public class Game {
@@ -11,15 +10,16 @@ public class Game {
 	private boolean gameOver;
 	private Scene currentScene;
 	
-	public Game(Map<String, Scene> Scenes, Map<String, Boolean> CheckPoints, String CurrentScene) {
-		setScenes(Scenes);
-		setCheckPoints(CheckPoints);
+	public Game(Map<String, Scene> ScenesArg, Map<String, Boolean> CheckPointsArg, String CurrentScene) {
+		setScenes(ScenesArg);
+		setCheckPoints(CheckPointsArg);
 		currentScene = Scenes.get(CurrentScene);
 	}
 	
 	public void start() {
 		this.gameOver = false; 
 		run();
+		return;
 	}
 	
 	public Scene getStartScene(String Name) {
@@ -50,19 +50,20 @@ public class Game {
 	
 	public void endGame(){
 		this.gameOver = true;
+		return;
 	}
 	
 	public boolean CheckPointAvaliable(String Name) {
 		return this.CheckPoints.get(Name);
 	}
 	
-	public String getTextString(Text text, Map<String, Boolean> CheckpointDictionary){
+	public String getTextString(Text text){
 	    ArrayList<CheckpointQuery> checkList = text.getCheckpointsRequired();
 	    CheckpointQuery check;
 	    boolean checkVal = true;
 	    for (int j = 0; j < checkList.size(); j++){
 	        check = checkList.get(j);
-	        if (! (check.getWantedValue() == CheckpointDictionary.get(check.getCheckpointName()))){
+	        if (check.getWantedValue() != CheckPoints.get(check.getCheckpointName())){
 	            checkVal = false;
 	        }
 	    }
@@ -85,6 +86,8 @@ public class Game {
 	        }
 		}
 		if (checkVal){
+			System.out.print(Integer.toString(choiceNumber));
+			System.out.print(") ");
 			System.out.print(choice.getOptionText());
 			System.out.print("\n");
 		}
@@ -92,7 +95,7 @@ public class Game {
 	}
 
 	public void printSceneChoicesText(){
-		private ArrayList<Choice> choiceList = currentScene.getChoices();
+		ArrayList<Choice> choiceList = currentScene.getChoices();
 		for (int i = 0; i < choiceList.size(); i++){
 			printChoice(choiceList.get(i), i);
 		}
@@ -102,11 +105,11 @@ public class Game {
 	public String getSceneDescription(Scene scene){
 	    String returnString = "";
 	    Text text;
-	    ArrayList<Text> description;
+	    ArrayList<Text> description = scene.getDescription();
 	    
 	    for (int currentLine = 0; currentLine < description.size(); currentLine++){
 	        text = description.get(currentLine);
-	        returnString.concat("\n".concat(getTextString(text, getCheckPoints());
+	        returnString.concat("\n".concat(getTextString(text)));
 	    }
 	    return returnString;
 	}
@@ -122,14 +125,14 @@ public class Game {
 				CheckPoints.replace(currentCheckpoint, true);
 			}
 		}
+		return;
 	}
 
-	public int inputValidate(ArrayList<Choice> choiceList){
+	public int getUserInput(ArrayList<Choice> choiceList){
 		Scanner input = new Scanner(System.in);
 		int number;
         System.out.println("Enter choice: ");
         String choice = input.next();
-        input.close();
         if (choice.equals("exit")){
             return -1;
 		}
@@ -152,19 +155,20 @@ public class Game {
 		int userIn;
 		Choice runChoice;
 		ArrayList<String> flipList;
+
 		while(! gameOver){
-			system.out.print(getSceneDescription(currentScene));
+			System.out.print(getSceneDescription(currentScene));
 			printSceneChoicesText();
 			userIn = getUserInput(currentScene.getChoices());
 			if (userIn == -1){
 				endGame();
 			}
 			else if (userIn == -2){
-				system.out.print("Please enter a valid choice. \n");
+				System.out.print("Please enter a valid choice. \n");
 			}
 			else{
 				runChoice = currentScene.getChoices().get(userIn);
-				system.out.print(runChoice.getDescription());
+				System.out.print(runChoice.getDescription());
 				flipList = runChoice.getFlipCheckpoints();
 				flipValues(flipList);
 				currentScene = Scenes.get(runChoice.getScene());

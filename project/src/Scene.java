@@ -11,16 +11,16 @@ public class Scene {
         choices = Choices;
     }
 
-    public ArrayList getChoices(){
+    public ArrayList<Choice> getChoices(){
         return choices;
     }
 
-    public void setChoices(ArrayList newChoices){
+    public void setChoices(ArrayList<Choice> newChoices){
         choices = newChoices;
         return;
     }
 
-    public Arraylist<Text> getDescription(){ //returns the actual description of the scene based on checkpoints completed.
+    public ArrayList<Text> getDescription(){ 
         return description;
     }
 
