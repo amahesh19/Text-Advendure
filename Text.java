@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Text{
     private String trueText;
     private String falseText;
-    private ArrayList<checkpointQuery> checkpointsRequired;
+    private ArrayList<CheckpointQuery> checkpointsRequired;
 
-    public Text(String TrueText, String FalseText, ArrayList<String> CheckpointsRequired){
+    public Text(String TrueText, String FalseText, ArrayList<CheckpointQuery> CheckpointsRequired){
         trueText = TrueText;
         falseText = FalseText;
         checkpointsRequired = CheckpointsRequired;

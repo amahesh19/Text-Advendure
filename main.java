@@ -7,8 +7,11 @@ public class main {
 		Map<String, Boolean> CheckPoints = new HashMap<String, Boolean>();
 		String currentSceneName;
 		
+//parse here
+
 		Game newGame = new Game(Scenes, CheckPoints, currentScene); 
 		
 		newGame.start();
+		return;
 	}
 }

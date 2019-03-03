@@ -13,6 +13,7 @@ public class CheckpointQuery{
 
     public void setCheckpointName(String newCheckpointName){
         checkpointName = newCheckpointName;
+        return;
     }
 
     public boolean getWantedValue(){
@@ -21,5 +22,6 @@ public class CheckpointQuery{
 
     public void setWantedValue(boolean newWantedValue){
         wantedValue = newWantedValue;
+        return;
     }
 }
