@@ -1,38 +1,56 @@
 import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import java.util.HashMap;
-import java.util.Iterator;
 import java.io.FileReader;
 import java.io.IOException;
+import org.json.JSONTokener;
+import java.io.InputStream;
+import java.io.Reader;
+import java.util.HashMap;
+import java.util.Iterator;
 
 import java.util.ArrayList;
-
+import org.json.JSONObject;
+import java.util.stream.Stream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.json.simple.parser.*;
 import org.json.simple.parser.ParseException;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+
 
 import com.sun.javafx.collections.MappingChange.Map;
 
 public class ReadJSONFile {
-	
-	private JSONParser parser;
 	private JSONObject json;
-	private Object obj;
 	
 	public ReadJSONFile(String filename){
 		// TODO Auto-generated method stub
-		parser = new JSONParser();
 		
 		try {
-			obj = parser.parse(new FileReader(filename));
-			json = (JSONObject) obj;
+			InputStream is = new FileInputStream(filename);
+			BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+			        
+			String line = buf.readLine();
+			StringBuilder sb = new StringBuilder();
+			        
+			while(line != null){
+			   sb.append(line).append("\n");
+			   line = buf.readLine();
+			}
+			        
+			String fileAsString = sb.toString();
+
+			JSONTokener tokener = new JSONTokener(fileAsString);
+			json = new JSONObject(tokener);
+
 		}
 		catch(FileNotFoundException e) { e.printStackTrace();}
 		catch(IOException e) { e.printStackTrace();}
-		catch(ParseException e) { e.printStackTrace();}
 		catch(Exception e) { e.printStackTrace();}
 	}
 	

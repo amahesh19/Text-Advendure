@@ -9,7 +9,7 @@ public class main {
 		HashMap<String, Boolean> CheckPoints = new HashMap<String, Boolean>();
 		String currentSceneName;
 		
-		ReadJSONFile parser = new ReadJSONFile("PrototypeGame.json");
+		ReadJSONFile parser = new ReadJSONFile("../PrototypeGame.json");
 		
 		currentSceneName = parser.getFirstScene();
 		CheckPoints = parser.getCheckpoints();

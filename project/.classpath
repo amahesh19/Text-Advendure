@@ -5,5 +5,7 @@
 	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/java-json.jar/java-json.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/json-simple-1.1.jar/json-simple-1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/org.apache.commons.io.jar/org.apache.commons.io.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/jar_files/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nbomb/Downloads/json-20180813.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
