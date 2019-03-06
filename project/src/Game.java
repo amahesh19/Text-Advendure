@@ -121,11 +121,9 @@ public class Game {
 			currentCheckpoint = flipList.get(i);
 			if (CheckPoints.get(currentCheckpoint)){
 				CheckPoints.replace(currentCheckpoint, false);
-				System.out.print("Setting " + currentCheckpoint +  "to false. \n");
 			}
 			else{
 				CheckPoints.replace(currentCheckpoint, true);
-				System.out.print("Setting " + currentCheckpoint +  "to true. \n");
 			}
 		}
 		return;
