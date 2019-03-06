@@ -50,6 +50,7 @@ public class Game {
 	
 	public void endGame(){
 		this.gameOver = true;
+		System.out.print("\nClosing game. Thanks for playing!\n");
 		return;
 	}
 	
