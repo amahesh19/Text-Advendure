@@ -74,8 +74,8 @@ public class Game {
 	        return text.getFalseText();
 	    }
 	}
-
-	public void printChoice(Choice choice, int choiceNumber){
+	
+	public Boolean checkValidChoice(Choice choice) {
 		ArrayList<CheckpointQuery> checkList = choice.getCheckpoints();
 	    CheckpointQuery check;
 	    boolean checkVal = true;
@@ -85,7 +85,11 @@ public class Game {
 	            checkVal = false;
 	        }
 		}
-		if (checkVal){
+	    return checkVal;
+	}
+
+	public void printChoice(Choice choice, int choiceNumber){
+		if (checkValidChoice(choice)){
 			System.out.print(Integer.toString(choiceNumber));
 			System.out.print(") ");
 			System.out.print(choice.getOptionText());
@@ -147,8 +151,11 @@ public class Game {
 			if(number > choiceList.size() || number < 0){
             	return -2;
         	}
-        	else{
+			if (checkValidChoice(choiceList.get(number))) {
 				return number;
+			}
+			else {
+				return -2;
 			}
         }
     }
