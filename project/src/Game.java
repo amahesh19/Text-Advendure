@@ -121,9 +121,11 @@ public class Game {
 			currentCheckpoint = flipList.get(i);
 			if (CheckPoints.get(currentCheckpoint)){
 				CheckPoints.replace(currentCheckpoint, false);
+				System.out.print("Setting " + currentCheckpoint +  "to false. \n");
 			}
 			else{
 				CheckPoints.replace(currentCheckpoint, true);
+				System.out.print("Setting " + currentCheckpoint +  "to true. \n");
 			}
 		}
 		return;
@@ -170,7 +172,7 @@ public class Game {
 			}
 			else{
 				runChoice = currentScene.getChoices().get(userIn);
-				System.out.print(runChoice.getDescription());
+				System.out.print(runChoice.getDescription() + "\n");
 				flipList = runChoice.getFlipCheckpoints();
 				flipValues(flipList);
 				currentScene = Scenes.get(runChoice.getScene());

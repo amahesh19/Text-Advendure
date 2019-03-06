@@ -138,8 +138,9 @@ public class ReadJSONFile {
 				}
 				
 				cpqArray = (JSONArray) ChoiceObject.getJSONArray("FlipCheckpoints");
+				cpqStringList = new ArrayList<String>();
 				
-				for (int k = 0; k < cpqArray.length(); k++) {
+				for (int k = 0; k < cpqArray.length(); k++) { //gets flipcheckpoints
 					cpqStringList.add((String) cpqArray.getString(k));
 				}
 				choiceList.add(new Choice(OptionText, Desc, cpqStringList, Scene, cpqList));

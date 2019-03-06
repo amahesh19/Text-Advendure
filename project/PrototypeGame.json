@@ -2,7 +2,7 @@
     "StartingScene": "S1",
     "Scenes": [
         {
-            "Name": "S1",
+            "Name": "S1", 
             "Description": ["S1T1"],
             "Choices": ["S1C1", "S1C2"]
         },
@@ -45,8 +45,7 @@
         "S2C1": {
             "OptionText": "Go West.",
             "Description": "You enter the door to the West.",
-            "CheckpointsRequiredTrue": [],
-            "CheckpointsRequiredFalse": [],
+            "Checkpoints": [],
             "FlipCheckpoints": [],
             "Scene": "S3"
         },
@@ -104,14 +103,14 @@
             "Description": "You enter the door to the West.",
             "Checkpoints": [],
             "FlipCheckpoints": [],
-            "Scene": "S3"
+            "Scene": "S2"
         }
     },
     "CheckpointNames": [
-        {"name": "HasKey",
-        "value": true},
-        {"name": "DoorUnlocked",
-        "value": false}
+        {"Name": "HasKey",
+        "Value": false},
+        {"Name": "DoorUnlocked",
+        "Value": false}
         ],
     "Text": {
         "S1T1": {
