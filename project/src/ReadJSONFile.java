@@ -1,56 +1,29 @@
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import org.json.JSONTokener;
 import java.io.InputStream;
-import java.io.Reader;
 import java.util.HashMap;
-import java.util.Iterator;
 
 import java.util.ArrayList;
 import org.json.JSONObject;
-import java.util.stream.Stream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.simple.parser.*;
-import org.json.simple.parser.ParseException;
-
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-
-
-import com.sun.javafx.collections.MappingChange.Map;
 
 public class ReadJSONFile {
 	private JSONObject json;
 	
 	public ReadJSONFile(String filename){
-		// TODO Auto-generated method stub
+		// TODO make this assign a json object reference in variable json
 		
 		try {
+			
 			InputStream is = new FileInputStream(filename);
-			BufferedReader buf = new BufferedReader(new InputStreamReader(is));
-			        
-			String line = buf.readLine();
-			StringBuilder sb = new StringBuilder();
-			        
-			while(line != null){
-			   sb.append(line).append("\n");
-			   line = buf.readLine();
-			}
-			        
-			String fileAsString = sb.toString();
-
-			JSONTokener tokener = new JSONTokener(fileAsString);
-			json = new JSONObject(tokener);
+			JSONTokener jT = new JSONTokener(is);
+			json = (JSONObject) jT.nextValue();
+			
 
 		}
 		catch(FileNotFoundException e) { e.printStackTrace();}
-		catch(IOException e) { e.printStackTrace();}
 		catch(Exception e) { e.printStackTrace();}
 	}
 	
@@ -61,11 +34,11 @@ public class ReadJSONFile {
 	
 	public HashMap<String, Boolean> getCheckpoints() throws JSONException{
 		HashMap<String, Boolean> checkPointsList = new HashMap<String, Boolean>();
-		JSONArray array = (JSONArray) json.get("Checkpoints");
+		JSONArray array = (JSONArray) json.get("CheckpointNames");
 		
-		for (int i = 0; i < array.length(); i++) {
+		for (int i = 0; i < array.length(); i++) { //get the list of checkpoints and their values
 			JSONObject entry = array.getJSONObject(i);
-			checkPointsList.put(entry.getString("name"), entry.getBoolean("value"));
+			checkPointsList.put(entry.getString("Name"), entry.getBoolean("Value"));
 		}	
 		
 		return checkPointsList;
@@ -85,7 +58,6 @@ public class ReadJSONFile {
 		String textName;
 		
 		JSONArray ChoiceArray;
-		String choiceName;
 		
 		ArrayList<Text> textList;
 		ArrayList<Choice> choiceList;
@@ -109,7 +81,7 @@ public class ReadJSONFile {
 		String ChoiceName;
 		
 		
-		for (int i = 0; i < sceneArray.length(); i++) {
+		for (int i = 0; i < sceneArray.length(); i++) { //Here we parse the list of scenes.
 			scene = (JSONObject) sceneArray.getJSONObject(i);
 			TextArray = (JSONArray) scene.get("Description");
 			ChoiceArray = (JSONArray) scene.get("Choices");
@@ -125,7 +97,7 @@ public class ReadJSONFile {
 			
 			
 			textList = new ArrayList<Text>();
-			for (int j = 0; j < TextArray.length(); j++) {
+			for (int j = 0; j < TextArray.length(); j++) { //Here we parse the list of Text objects for each scene.
 				textName = (String) TextArray.getString(j);
 				TextObject = (JSONObject) TextFinder.getJSONObject(textName);
 				
@@ -136,7 +108,7 @@ public class ReadJSONFile {
 				
 				cpqList = new ArrayList<CheckpointQuery>();
 				
-				for (int k = 0; k < cpqArray.length(); k++) {
+				for (int k = 0; k < cpqArray.length(); k++) { //parses its checkpoints
 					cpqObj = (JSONObject) cpqArray.getJSONObject(k);
 					checkPointName = (String) cpqObj.getString("Name");
 					checkPointValue = (Boolean) cpqObj.getBoolean("Value");
@@ -147,7 +119,7 @@ public class ReadJSONFile {
 			
 			
 			choiceList = new ArrayList<Choice>();
-			for (int j = 0; j < ChoiceArray.length(); j++) {
+			for (int j = 0; j < ChoiceArray.length(); j++) { //Parse list of choices
 				ChoiceName = (String) ChoiceArray.getString(j);
 				ChoiceObject = (JSONObject) ChoiceFinder.getJSONObject(ChoiceName);
 				
@@ -158,7 +130,7 @@ public class ReadJSONFile {
 				cpqArray = (JSONArray) ChoiceObject.getJSONArray("Checkpoints");
 				cpqList = new ArrayList<CheckpointQuery>();
 				
-				for (int k = 0; k < cpqArray.length(); k++) {
+				for (int k = 0; k < cpqArray.length(); k++) { //gets all the checkpoints needed for this choice.
 					cpqObj = (JSONObject) cpqArray.getJSONObject(k);
 					checkPointName = (String) cpqObj.getString("Name");
 					checkPointValue = (Boolean) cpqObj.getBoolean("Value");

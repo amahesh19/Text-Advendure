@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Map;
 
 import org.json.JSONException;
 
@@ -9,7 +8,7 @@ public class main {
 		HashMap<String, Boolean> CheckPoints = new HashMap<String, Boolean>();
 		String currentSceneName;
 		
-		ReadJSONFile parser = new ReadJSONFile("../PrototypeGame.json");
+		ReadJSONFile parser = new ReadJSONFile("PrototypeGame.json");
 		
 		currentSceneName = parser.getFirstScene();
 		CheckPoints = parser.getCheckpoints();
@@ -20,6 +19,6 @@ public class main {
 		Game newGame = new Game(Scenes, CheckPoints, currentSceneName); 
 		
 		newGame.start();
-		return;
+		System.exit(0);
 	}
 }

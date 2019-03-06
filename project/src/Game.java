@@ -99,6 +99,7 @@ public class Game {
 		for (int i = 0; i < choiceList.size(); i++){
 			printChoice(choiceList.get(i), i);
 		}
+		System.out.print("\n");
 		return;
 	}
 
@@ -109,7 +110,7 @@ public class Game {
 	    
 	    for (int currentLine = 0; currentLine < description.size(); currentLine++){
 	        text = description.get(currentLine);
-	        returnString.concat("\n".concat(getTextString(text)));
+	        returnString += getTextString(text) + "\n";
 	    }
 	    return returnString;
 	}
@@ -128,6 +129,7 @@ public class Game {
 		return;
 	}
 
+	@SuppressWarnings("resource")
 	public int getUserInput(ArrayList<Choice> choiceList){
 		Scanner input = new Scanner(System.in);
 		int number;
