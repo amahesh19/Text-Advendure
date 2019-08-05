@@ -1,9 +1,10 @@
 # text-based-adventure-interpreter
 
-This project is a "game engine" for text-based games.
+This project is a game engine for text-based games.
 It allows people to easily create and play text based games.
 
 So far, it allows game creators to write stories, and plays the stories out, keeping track of checkpoints and user input.
+This allows game creators to make adventures similar to choose your own adventure novels, but with much more room for choice, and without all that pesky flipping from page to page by the user.
 
 
 In the future, we could add support for different data types, such as integers or floats, in order to support adding different
