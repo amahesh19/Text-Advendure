@@ -1,4 +1,4 @@
-# text-based-adventure-interpreter
+# text-based game engine
 
 This project is a game engine for text-based games.
 It allows people to easily create and play text based games.
