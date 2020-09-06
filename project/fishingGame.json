@@ -100,7 +100,7 @@
             "Checkpoints": []
         },
         "Has rod option": {
-            "TrueText": "You hold your fishing rod by yourside, and comtemplate using it",
+            "TrueText": "You hold your fishing rod by yourside and comtemplate using it",
             "FalseText": "There is a fishing rod sitting on the dock",
             "Checkpoints": [
                 {
